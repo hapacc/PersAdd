@@ -39,7 +39,7 @@ namespace PersAdd
                 DataSet dsMydata= new DataSet();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = Program.conn;
-                cmd.CommandText = "select[姓名] from [Contact] where [姓名]='" + name.Text + "'";
+                cmd.CommandText = "select *from Pers where [姓名]='" + name.Text + "'";
                 cmd.ExecuteNonQuery();
                 if (cmd.ExecuteScalar() == null)
                 {
@@ -55,7 +55,7 @@ namespace PersAdd
                 }
                 else
                 {
-                    cmd.CommandText = "update Contact set 姓名='" + name.Text + "'," + "单位='" + company.Text + "'," + "固定电话='" + telphone.Text + "'," + "手机='" + mobphone.Text + "'," + "EMAIL='" + email.Text + "'," + "QQ='" + qq.Text + "'," + "分类='" + demo + "'where 姓名='" + name.Text + "'";
+                    cmd.CommandText = "update Pers set 姓名='" + name.Text + "'," + "单位='" + company.Text + "'," + "固定电话='" + telphone.Text + "'," + "手机='" + mobphone.Text + "'," + "EMAIL='" + email.Text + "'," + "QQ='" + qq.Text + "'," + "分类='" + demo + "'where 姓名='" + name.Text + "'";
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("修改成功");     
                     Program.conn.Close();
@@ -92,7 +92,7 @@ namespace PersAdd
         private void name_TextChanged(object sender, EventArgs e)
         {
             Program.conn.Open();
-            string search = "select*from Contact where 姓名='" + name.Text + "'";
+            string search = "select*from Pers where 姓名='" + name.Text + "'";
             MySqlDataAdapter daSelect = new MySqlDataAdapter(search, Program.conn);
             DataTable dt = new DataTable();
             daSelect.Fill(dt);

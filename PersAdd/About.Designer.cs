@@ -81,9 +81,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(54, 120);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(197, 18);
+            this.label4.Size = new System.Drawing.Size(170, 18);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Mail:zhaxud@gmail.com";
+            this.label4.Text = "Mail:admin@hapa.cc";
             // 
             // lblInfo
             // 
